@@ -1,8 +1,8 @@
 <div align="center">
 
-  <img src="Logo-app.ico" alt="ReadMail Logo" width="120" height="120">
+  <img src="Logo-app.ico" alt="Read Mail Outlook Logo" width="120" height="120">
 
-  # ReadMail Outlook Tool
+  # Read Mail Outlook
 
   **Công cụ lấy Refresh Token & Đọc Mail Outlook tự động**
   
@@ -20,19 +20,19 @@
 
 ## 📖 Giới thiệu
 
-**ReadMail Outlook Tool** giúp bạn lấy Refresh Token từ tài khoản Microsoft và sử dụng nó để truy cập vào các email trong hộp thư Outlook của bạn. Công cụ hỗ trợ tự động hoá quy trình đăng nhập qua OAuth2.
+**Read Mail Outlook** giúp bạn lấy Refresh Token từ tài khoản Microsoft và sử dụng nó để truy cập vào các email trong hộp thư Outlook của bạn. Công cụ hỗ trợ tự động hoá quy trình đăng nhập qua OAuth2.
 
 ### ✨ Tính Năng Chính
-* **Lấy Refresh Token:** Tự động lấy và lưu trữ Token.
+* **Lấy Refresh Token:** Tự động lấy và lưu trữ Token để sử dụng lâu dài.
 * **Đọc Email:** Truy xuất 20 email mới nhất (Hộp thư đến & Spam).
 * **Quản lý danh sách:** Hỗ trợ nhập (Import) list tài khoản và chuyển đổi nhanh giữa các email.
 * **Tương tác:** Sao chép nội dung hoặc lấy link trong mail dễ dàng.
 
-## ⚙️ Yêu cầu hệ thống (Quan trọng)
+## ⚙️ Yêu cầu hệ thống
 
-Để tool hoạt động, máy tính của bạn **bắt buộc** phải cài đặt môi trường sau:
 * **Hệ điều hành:** Windows 10 / 11 (64-bit).
 * **Môi trường:** [.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+  > *Lưu ý: Khi mở phần mềm, nếu máy bạn chưa có .NET 8.0, tool sẽ tự động hiện thông báo và dẫn link tải.*
 
 ## ⬇️ Tải xuống & Cài đặt
 
@@ -45,8 +45,10 @@
 
 ## ⚖️ Bản quyền
 
-Phần mềm được phát hành miễn phí (**Freeware**).
-Nghiêm cấm mọi hành vi mua bán hoặc dịch ngược mã nguồn (Reverse Engineering).
+Phần mềm được phát hành miễn phí (**Freeware**) cho mục đích sử dụng cá nhân.
+Nghiêm cấm mọi hành vi mua bán thương mại hoặc dịch ngược mã nguồn (Reverse Engineering).
+
+Xem chi tiết tại file [LICENSE](LICENSE).
 
 ---
 <div align="center">
