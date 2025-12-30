@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Mail Outlook - Tool Get Token & Read Mail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --accent-color: #0ea5e9; /* Màu Xanh Dương Outlook */
+            --secondary-text: #94a3b8;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: linear-gradient(to bottom, #0f172a, #172554);
+            color: var(--text-color);
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* --- LOGO & HEADER --- */
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .project-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(14, 165, 233, 0.3));
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, #bfdbfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--secondary-text);
+            font-weight: 400;
+        }
+
+        /* --- SCREENSHOT AREA --- */
+        .preview-container {
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 50px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+            background: #1e293b;
+            position: relative;
+        }
+
+        .placeholder-image {
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255,255,255,0.03),
+                rgba(255,255,255,0.03) 10px,
+                rgba(255,255,255,0.05) 10px,
+                rgba(255,255,255,0.05) 20px
+            );
+            color: var(--secondary-text);
+        }
+
+        .app-screenshot {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        /* --- DESCRIPTION --- */
+        .features-section {
+            max-width: 700px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+
+        .features-section h2 {
+            font-size: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .features-section p {
+            line-height: 1.7;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .feature-list li {
+            padding-left: 25px;
+            position: relative;
+            color: var(--secondary-text);
+        }
+
+        .feature-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* --- SYSTEM REQUIREMENTS BOX --- */
+        .requirements-box {
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+            color: #e0f2fe;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            max-width: 700px;
+        }
+
+        .requirements-box a {
+            color: var(--accent-color);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* --- DOWNLOAD SECTION --- */
+        .download-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+            background: var(--accent-color);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            background: #38bdf8;
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+        }
+
+        /* Footer */
+        .footer-nav {
+            margin-top: auto;
+            display: flex;
+            gap: 20px;
+        }
+        .footer-nav a {
+            color: var(--secondary-text);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .footer-nav a:hover {
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <img src="Logo-app.ico" alt="Logo Read Mail Outlook" class="project-logo">
+        <h1>Read Mail Outlook</h1>
+        <p class="subtitle">Lấy Refresh Token & Đọc Mail Outlook tự động</p>
+    </div>
+
+    <div class="preview-container">
+        <div class="placeholder-image">
+            <i class="fa-solid fa-image" style="font-size: 40px; margin-bottom: 15px; opacity: 0.5;"></i>
+            <span>Giao diện phần mềm sẽ được cập nhật sớm</span>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <h2>Giới thiệu</h2>
+        <p>
+            Công cụ hỗ trợ lấy Refresh Token từ tài khoản Microsoft và sử dụng nó để truy cập email trong hộp thư Outlook một cách tự động. 
+            Giải pháp này giúp bạn quản lý số lượng lớn tài khoản thông qua giao thức OAuth2 an toàn.
+        </p>
+        
+        <ul class="feature-list">
+            <li><strong>Nhập danh sách:</strong> Hỗ trợ import danh sách email cần xử lý.</li>
+            <li><strong>Lấy Refresh Token:</strong> Tự động lấy và lưu trữ Token để sử dụng lâu dài.</li>
+            <li><strong>Đọc Email:</strong> Truy xuất 20 email mới nhất (Inbox & Junk) qua OAuth2.</li>
+            <li><strong>Tương tác:</strong> Sao chép nội dung văn bản hoặc trích xuất liên kết nhanh chóng.</li>
+            <li><strong>Chuyển đổi:</strong> Nút chuyển nhanh giữa các tài khoản email trong danh sách.</li>
+        </ul>
+    </div>
+
+    <div class="requirements-box">
+        <i class="fa-solid fa-triangle-exclamation" style="font-size: 1.2rem; margin-top: 2px;"></i>
+        <div>
+            <strong>Yêu cầu hệ thống:</strong><br><br>
+            Tool yêu cầu <strong>.NET 8.0 Desktop Runtime</strong>.<br>
+            <span style="font-size: 0.9em; opacity: 0.9;">
+                (Bạn có thể tải bên dưới, hoặc khi mở Tool sẽ tự động thông báo và dẫn link tải nếu máy chưa có).
+            </span>
+            <br>
+            <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0" target="_blank" style="display: inline-block; margin-top: 8px;">
+                Tải thủ công tại đây (Microsoft) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.8rem;"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="download-box">
+        <span style="display: block; margin-bottom: 15px; color: var(--secondary-text);">
+            Phiên bản mới nhất trên GitHub Releases
+        </span>
+        
+        <a href="https://github.com/songmaucodai/Read-Mail-Outlook/releases/latest" target="_blank" class="btn-download">
+            <i class="fa-brands fa-github"></i>
+            Tải xuống ngay (ZIP)
+        </a>
+
+        <p class="note">
+            <i class="fa-brands fa-windows"></i> Hỗ trợ: Windows 10 / 11
+        </p>
+    </div>
+
+    <div class="footer-nav">
+        <a href="https://songmaucodai.online"><i class="fa-solid fa-arrow-left"></i> Về trang chủ</a>
+        <a href="https://github.com/songmaucodai/Read-Mail-Outlook" target="_blank"><i class="fa-brands fa-github"></i> GitHub Project</a>
+    </div>
+
+</body>
+</html>
