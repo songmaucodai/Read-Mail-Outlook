@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="Logo-app.ico" alt="Read Mail Outlook Logo" width="120" height="120">
+  <img src="Logo-app.png" alt="Read Mail Outlook Logo" width="120" height="120">
 
   # Read Mail Outlook
 
