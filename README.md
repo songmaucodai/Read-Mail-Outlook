@@ -4,7 +4,7 @@
 
   # Read Mail Outlook
 
-  **Công cụ lấy Refresh Token & Đọc Mail Outlook tự động**
+  **Công cụ lấy Refresh Token & Đọc Mail Outlook**
   
   [![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=flat-square)]()
   [![License](https://img.shields.io/badge/License-Freeware-green?style=flat-square)](LICENSE)
