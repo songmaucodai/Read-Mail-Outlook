@@ -36,11 +36,12 @@
 
 Đây là phần mềm dạng **Single File** (Chỉ duy nhất 1 file EXE, chạy ngay không cần cài đặt).
 
-<a href="https://github.com/songmaucodai/read-mail-outlook/releases/latest/download/Read%20Mail%20Outlook.exe"><strong>Tải xuống ngay (EXE)</strong></a>
+<a href="https://github.com/songmaucodai/read-mail-outlook/releases/latest/download/Read-Mail-Outlook.zip"><strong>Tải xuống ngay (ZIP)</strong></a>
 
 **Hướng dẫn:**
-1. Tải file `Read Mail Outlook.exe` về máy.
-2. Mở file để sử dụng ngay lập tức.
+1. Tải file `Read-Mail-Outlook.zip` về máy.
+2. Giải nén file ra máy (1 file duy nhất).
+3. Đặt file ở bất cứ đâu bạn muốn và chạy file `.exe` để bắt đầu sử dụng.
 
 > *Lưu ý: Có thể cần WebView2 Runtime / .NET Framework nếu máy chưa có sẵn.*
 
