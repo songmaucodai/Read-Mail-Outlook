@@ -61,21 +61,19 @@
             font-weight: 400;
         }
 
-        /* --- CỬA SỔ ỨNG DỤNG (WINDOW FRAME) --- */
-        /* Đây là phần làm đẹp ảnh */
+        /* WINDOW FRAME */
         .window-frame {
             width: 100%;
-            max-width: 750px; /* Thu nhỏ lại (cũ là 900px) */
-            background: #1e293b; /* Màu nền của khung cửa sổ */
-            border-radius: 12px; /* Bo góc tròn */
+            max-width: 750px;
+            background: #1e293b;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6); /* Đổ bóng sâu hơn */
-            border: 1px solid rgba(255, 255, 255, 0.15); /* Viền nhẹ */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             margin-bottom: 50px;
             position: relative;
         }
 
-        /* Thanh tiêu đề giả lập (giống MacOS/Windows) */
         .window-header {
             background: #334155;
             padding: 10px 15px;
@@ -85,34 +83,26 @@
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* 3 nút tròn đỏ/vàng/xanh */
-        .dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
         .dot.red { background: #ef4444; }
         .dot.yellow { background: #f59e0b; }
         .dot.green { background: #22c55e; }
 
-        /* Container chứa ảnh bên trong khung */
         .image-container {
             position: relative;
-            min-height: 200px; /* Chiều cao tối thiểu */
+            min-height: 200px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #0f172a; /* Màu nền đen bên trong nếu ảnh chưa load */
+            background-color: #0f172a;
         }
 
-        /* Ảnh thật */
         .app-screenshot {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        /* Placeholder khi chưa có ảnh */
         .placeholder-image {
             width: 100%;
             aspect-ratio: 16/9;
@@ -173,38 +163,58 @@
             color: var(--accent-color);
         }
 
-        /* REQUIREMENTS */
+        /* REQUIREMENTS - ĐÃ BỎ ICON & CĂN GIỮA HOÀN TOÀN */
         .requirements-box {
             background: rgba(14, 165, 233, 0.1);
             border: 1px solid var(--accent-color);
             border-radius: 8px;
+            
+            /* Padding chuẩn, không cần chừa chỗ cho icon nữa */
             padding: 15px 20px;
+            
             margin-bottom: 40px;
-            font-size: 0.95rem;
             color: #e0f2fe;
+            
+            /* Căn giữa nội dung */
             display: flex;
-            align-items: flex-start;
-            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
             max-width: 700px;
             width: 100%;
+            box-sizing: border-box;
         }
 
-        .requirements-box a {
-            color: var(--accent-color);
-            font-weight: 700;
-            text-decoration: underline;
+        .requirements-box .req-text {
+            /* Style font chữ cũ của bạn */
+            font-size: 0.9em;
+            opacity: 0.8;
+            line-height: 1.5;
         }
 
-        /* DOWNLOAD */
+        /* DOWNLOAD BOX - GIỮ NGUYÊN */
         .download-box {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 30px;
             border-radius: 16px;
             text-align: center;
             width: 100%;
             max-width: 500px;
             margin-bottom: 40px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 35px 30px; 
+            gap: 25px; 
+        }
+
+        .download-box span.version-text {
+            color: var(--secondary-text);
+            margin: 0;
+            line-height: 1.2;
         }
 
         .btn-download {
@@ -220,6 +230,7 @@
             background: var(--accent-color);
             color: #fff;
             box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+            margin: 0;
         }
 
         .btn-download:hover {
@@ -228,9 +239,10 @@
         }
 
         .note {
-            margin-top: 10px;
             font-size: 0.8rem;
             color: var(--secondary-text);
+            margin: 0;
+            line-height: 1.2;
         }
 
         /* FOOTER */
@@ -295,18 +307,13 @@
     </div>
 
     <div class="requirements-box">
-        <i class="fa-solid fa-triangle-exclamation" style="font-size: 0.8rem; margin-top: 2px;"></i>
-        <div>
-            <strong>Lưu ý:</strong><br><br>
-            <span style="font-size: 0.9em; opacity: 0.8; display: block; text-align: center; width: 100%;">
-                Có thể cần WebView2 Runtime / .NET Framework nếu máy chưa có sẵn.
-            </span>
-            </a>
-        </div>
+        <span class="req-text">
+            Có thể cần WebView2 Runtime / .NET Framework nếu máy chưa có sẵn.
+        </span>
     </div>
 
     <div class="download-box">
-        <span style="display: block; margin-bottom: 15px; color: var(--secondary-text);">
+        <span class="version-text">
             Phiên bản mới nhất trên GitHub Releases
         </span>
         
